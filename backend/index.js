@@ -3,7 +3,7 @@ const http = require('http');
 
 const server = http.createServer((req, res) => {
     if (req.url === '/data' && req.method === 'GET') {
-        fs.readFile('backend/data.json', 'utf-8', (err, data) => {
+        fs.readFile('./data.json', 'utf-8', (err, data) => {
             if (err) {
                 res.writeHead(500, { 'Content-Type': 'application/json' });
                 res.end(JSON.stringify({ error: 'Failed to read data' }));
@@ -19,7 +19,7 @@ const server = http.createServer((req, res) => {
             body += chunk.toString();
         });
         req.on('end', () => {
-            fs.readFile('backend/data.json', 'utf-8', (err, data) => {
+            fs.readFile('./data.json', 'utf-8', (err, data) => {
                 if (err) {
                     res.writeHead(500, { 'Content-Type': 'application/json' });
                     res.end(JSON.stringify({ error: 'Failed to read data' }));
@@ -27,7 +27,7 @@ const server = http.createServer((req, res) => {
                     const existingData = JSON.parse(data);
                     const newData = JSON.parse(body);
                     existingData.push(newData);
-                    fs.writeFile('backend/data.json', JSON.stringify(existingData, null, 2), (err) => {
+                    fs.writeFile('./data.json', JSON.stringify(existingData, null, 2), (err) => {
                         if (err) {
                             res.writeHead(500, { 'Content-Type': 'application/json' });
                             res.end(JSON.stringify({ error: 'Failed to write data' }));
