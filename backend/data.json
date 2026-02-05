@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "name": "Keshav Agarwal",
+    "age": 21,
+    "city": "Bulandshahr"
+  },
+  {
+    "id": 2,
+    "name": "Parkhi Sharma",
+    "age": 20,
+    "city": "Aligarh"
+  },
+  {
+    "id": 3,
+    "name": "Kirti Sharma",
+    "age": 18,
+    "city": "KankarKhera"
+  },
+  {
+    "id": 4,
+    "name": "Kartikey Kumar",
+    "age": 19,
+    "city": "Sonbhadra"
+  },
+  {
+    "id": 5,
+    "name": "Parkhi Agarwal",
+    "age": 20,
+    "city": "Siyana"
+  }
+]
